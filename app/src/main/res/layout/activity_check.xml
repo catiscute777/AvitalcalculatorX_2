@@ -37,7 +37,7 @@
         android:id="@+id/eqaisen"
         android:layout_width="374dp"
         android:layout_height="123dp"
-        android:textSize="48sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/ans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

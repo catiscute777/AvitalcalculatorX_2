@@ -1,5 +1,6 @@
 package com.example.avitalcalculatorx2;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -37,7 +38,7 @@ public class Check extends AppCompatActivity {
             st = ""+a+"x²+"+b+"x+"+c;
         tv1.setText(st);
         eq=Math.pow(b,2)-4*c*a;
-        if(eq>0)
+        if(eq>=0)
         {
             eq= Math.sqrt(eq);
                 x1 = (-b+eq)/(2*a);
@@ -53,17 +54,20 @@ public class Check extends AppCompatActivity {
     }
 
     public void back(View view)
-    {
-        Intent si1 = new Intent(this, MainActivity.class);
+    {int bc=-777;
+        Intent gi = new Intent();
         if(tv2.getText().equals(" NO ANSWER ")==false){
         if(x1==x2){
-          si1.putExtra("k",x1);
-            si1.putExtra("k",-777);}
+            gi.putExtra("no","e");
+            gi.putExtra("k",x1);
+            gi.putExtra("kk",bc);}
         else{
-            si1.putExtra("k",x1);
-            si1.putExtra("kk",x2);
+            gi.putExtra("no","e");
+            gi.putExtra("k",x1);
+            gi.putExtra("kk",x2);
         }}else
-            si1.putExtra("no"," NO ANSWER ");
-        startActivity(si1);
+            gi.putExtra("no"," NO ANSWER ");
+        setResult(Activity.RESULT_OK,gi);
+        finish();
     }
 }
