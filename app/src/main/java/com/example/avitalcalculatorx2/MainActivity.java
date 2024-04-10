@@ -76,26 +76,42 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case REQUEST_CODE:
                 if (resultCode == Activity.RESULT_OK) {
-                    {
                         if(data.getDoubleExtra("kk",1)!=-777)
                         {
-                            double f = data.getDoubleExtra("k",1);
-                            double s = data.getDoubleExtra("kk",1);
-                            tv.setText("X=  "+f);
-                            tv4.setText("X=  "+s);
+                            for(int i =0;i<6;i++)
+                                m1[i].setVisibility(View.GONE);
+                            tv.setText("X=  "+data.getDoubleExtra("k",1));
+                            tv4.setText("X=  "+data.getDoubleExtra("kk",1));
+                            if(a<0){
+                                for(int i =0;i<6;i++)
+                                    m1[i].setVisibility(View.GONE);
+                                m1[3].setVisibility(View.VISIBLE);}
+                            if(a>0)
+                                m1[0].setVisibility(View.VISIBLE);
                         }
                         if(data.getDoubleExtra("kk",1)==-777)
-                        {
-                            double f = data.getDoubleExtra("k",1);
-                            double s = data.getDoubleExtra("kk",1);
-                            tv.setText("X=  "+f);
-                            tv4.setVisibility(View.GONE);
-                        } if(data.getStringExtra("no").equals(" NO ANSWER "))
                     {
+                        for(int i =0;i<6;i++)
+                            m1[i].setVisibility(View.GONE);
+                        tv.setText("X=  "+data.getDoubleExtra("k",1));
+                        tv4.setText("");
+                        if(a<0)
+                            m1[4].setVisibility(View.VISIBLE);
+                        if(a>0)
+                            m1[1].setVisibility(View.VISIBLE);
+                    }
+                        if(data.getStringExtra("no").equals(" NO ANSWER "))
+                    {
+                        for(int i =0;i<6;i++)
+                            m1[i].setVisibility(View.GONE);
                         tv.setText(" NO ANSWER ");
                         tv4.setText("");
+                        if(a<0)
+                            m1[5].setVisibility(View.VISIBLE);
+                        if(a>0)
+                            m1[2].setVisibility(View.VISIBLE);
                     }
-                    }
+
                 }}
         }
     }

@@ -59,9 +59,10 @@ public class Check extends AppCompatActivity {
         if(tv2.getText().equals(" NO ANSWER ")==false){
         if(x1==x2){
             gi.putExtra("no","e");
-            gi.putExtra("k",x1);
-            gi.putExtra("kk",bc);}
-        else{
+            gi.putExtra("kk",x1);
+            gi.putExtra("kk",bc);
+            }
+        if(x1!=x2){
             gi.putExtra("no","e");
             gi.putExtra("k",x1);
             gi.putExtra("kk",x2);
