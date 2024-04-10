@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         ed3= findViewById(R.id.ed3);       btn1= findViewById(R.id.Cal); tv4 = findViewById(R.id.tx);
         m1[0]= findViewById(R.id.ht);m1[1]= findViewById(R.id.ho);m1[2]= findViewById(R.id.hf);
         m1[3]= findViewById(R.id.st);m1[4]= findViewById(R.id.so);m1[5]= findViewById(R.id.sf);
-        for(int i =0;i<6;i++)
-        m1[i].setVisibility(View.GONE);
+        for(int i =0;i<6;i++){
+        m1[i].setVisibility(View.GONE);}
 
     }
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case REQUEST_CODE:
                 if (resultCode == Activity.RESULT_OK) {
-                        if(data.getDoubleExtra("kk",1)!=-777)
+                        if((data.getBooleanExtra("o",true)==false)&&(data.getBooleanExtra("t",false)==true))
                         {
                             for(int i =0;i<6;i++)
                                 m1[i].setVisibility(View.GONE);
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                             if(a>0)
                                 m1[0].setVisibility(View.VISIBLE);
                         }
-                        if(data.getDoubleExtra("kk",1)==-777)
+                        if((data.getBooleanExtra("o",false)==true)&&(data.getBooleanExtra("t",true)==false))
                     {
                         for(int i =0;i<6;i++)
                             m1[i].setVisibility(View.GONE);

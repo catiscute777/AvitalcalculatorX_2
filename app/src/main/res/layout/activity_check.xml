@@ -11,8 +11,10 @@
         android:id="@+id/back"
         android:layout_width="309dp"
         android:layout_height="80dp"
-        android:text="Back"
+        android:background="#A19895"
         android:onClick="back"
+        android:text="Back"
+        app:backgroundTint = "@null"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,10 +42,10 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/ans"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.09" />
+        app:layout_constraintVertical_bias="0.34" />
 
     <TextView
         android:id="@+id/text4"

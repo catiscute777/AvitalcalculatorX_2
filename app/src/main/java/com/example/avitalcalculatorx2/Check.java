@@ -37,6 +37,7 @@ public class Check extends AppCompatActivity {
         if((c>0)&&(b>0))
             st = ""+a+"x²+"+b+"x+"+c;
         tv1.setText(st);
+        if(a !=0)
         eq=Math.pow(b,2)-4*c*a;
         if(eq>=0)
         {
@@ -56,18 +57,25 @@ public class Check extends AppCompatActivity {
     public void back(View view)
     {int bc=-777;
         Intent gi = new Intent();
+        if (a != 0) {
         if(tv2.getText().equals(" NO ANSWER ")==false){
         if(x1==x2){
-            gi.putExtra("no","e");
-            gi.putExtra("kk",x1);
-            gi.putExtra("kk",bc);
-            }
-        if(x1!=x2){
+            gi.putExtra("o",true);
+            gi.putExtra("t",false);
             gi.putExtra("no","e");
             gi.putExtra("k",x1);
+            gi.putExtra("a","ok");
+            }
+        if(x1!=x2){
+            gi.putExtra("o",false);
+            gi.putExtra("t",true);
+            gi.putExtra("no","e");
+            gi.putExtra("k",x1);
+            gi.putExtra("a","ok");
             gi.putExtra("kk",x2);
         }}else
-            gi.putExtra("no"," NO ANSWER ");
+            gi.putExtra("no"," NO ANSWER ");}
+
         setResult(Activity.RESULT_OK,gi);
         finish();
     }
