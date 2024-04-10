@@ -37,7 +37,7 @@ public class Check extends AppCompatActivity {
         if((c>0)&&(b>0))
             st = ""+a+"x²+"+b+"x+"+c;
         tv1.setText(st);
-        if(a !=0)
+
         eq=Math.pow(b,2)-4*c*a;
         if(eq>=0)
         {
